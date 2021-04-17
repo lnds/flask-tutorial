@@ -17,6 +17,8 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    env:
+        MY_SECRET: ${{secrets.MY_SECRET}}
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -34,9 +36,8 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo $MY_SECRET
-        env:
-          MY_SECRET: Secreto
+          echo "$MY_SECRET"
+
       - uses: jpetrucciani/bandit-check@master
 
 
