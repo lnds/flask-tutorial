@@ -26,6 +26,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      - name: Step 1 - Echo out a GitHub Actions Secret to the logs
+        run: |
+          echo "The GitHub Action Secret will be masked:  "
+          echo ${{ secrets.MY_SECRET }}
+          echo "Trick to echo GitHub Actions Secret:  "
+          echo ${{secrets.MY_SECRET}} | sed 's/./& /g' 
 
       # Runs a set of commands using the runners shell
       - name: Run only if secret match
