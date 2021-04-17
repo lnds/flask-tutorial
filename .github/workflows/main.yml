@@ -1,6 +1,1 @@
 uses: jpetrucciani/bandit-check@master
-
-# or specify a path!
-uses: jpetrucciani/bandit-check@master
-with:
-  path: '.'
