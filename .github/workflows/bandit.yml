@@ -35,6 +35,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           echo $MY_SECRET
+        env:
+          MY_SECRET: Secreto
       - uses: jpetrucciani/bandit-check@master
 
 
