@@ -16,7 +16,7 @@ def get_db_connection():
 
 def get_post(post_id):
   conn = get_db_connection()
-  post = conn.execute(f"SELECT * FROM posts WHERE ID = {post_id}").fetchone()
+  post = conn.execute(f"SELECT * FROM posts WHERE ID = 1").fetchone()
   conn.close()
   if post is None:
     abort(404)
@@ -67,4 +67,4 @@ def edit(id):
   
   
   
-app.run(host='0.0.0.0', port=8080)
+app.run(host='127.0.0.1', port=8080)
